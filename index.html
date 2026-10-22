@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EduSmart AI | Learning Platform</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="logo">E</span><span>EduSmart <b>AI</b><small>PERSONALISED LEARNING</small></span></a>
+  <button id="menuBtn" class="menu-btn" aria-label="Open menu">☰</button>
+  <nav id="nav"><a href="#dashboard">Dashboard</a><a href="#practice">Practice</a><a href="#tutor">AI Tutor</a><a href="#progress">Progress</a></nav>
+  <button id="profileBtn" class="profile">Student Profile</button>
+</header>
+<main class="wrap">
+<section class="hero">
+ <div><p class="eyebrow">YOUR LEARNING, YOUR PACE</p><h1>Learn smarter.<br><span>Grow every day.</span></h1>
+ <p class="sub">A personalised learning space to practise subjects, ask questions, and track your progress.</p>
+ <a class="primary" href="#practice">Start learning <span>→</span></a></div>
+ <div class="hero-art"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><div class="book">✦<br><span>LEARN</span></div><div class="float f1">＋ 25 XP</div><div class="float f2">✓ Keep going!</div></div>
+</section>
+<section id="dashboard" class="section">
+ <div class="section-head"><div><p class="eyebrow">OVERVIEW</p><h2>Your learning dashboard</h2></div><span class="pill" id="connection">Demo mode</span></div>
+ <div class="stats">
+  <article class="stat"><span class="stat-icon purple">✎</span><p>Quizzes completed</p><strong id="quizCount">0</strong><small>Keep practising</small></article>
+  <article class="stat"><span class="stat-icon blue">◎</span><p>Average score</p><strong id="avgScore">—</strong><small>Across your attempts</small></article>
+  <article class="stat"><span class="stat-icon green">⚡</span><p>Learning points</p><strong id="xp">0</strong><small>Earn points as you learn</small></article>
+  <article class="stat"><span class="stat-icon orange">◷</span><p>Study streak</p><strong id="streak">1 day</strong><small>One step at a time</small></article>
+ </div>
+</section>
+<section id="practice" class="section">
+ <div class="section-head"><div><p class="eyebrow">PRACTICE ZONE</p><h2>Choose a subject</h2></div><span class="muted">Short quizzes • Instant feedback</span></div>
+ <div class="subject-grid">
+  <button class="subject math" data-subject="Mathematics"><span class="subject-icon">∑</span><strong>Mathematics</strong><small>Numbers, logic & problem solving</small><span class="subject-link">Take a quiz →</span></button>
+  <button class="subject science" data-subject="Science"><span class="subject-icon">⚛</span><strong>Science</strong><small>Explore how the world works</small><span class="subject-link">Take a quiz →</span></button>
+  <button class="subject english" data-subject="English"><span class="subject-icon">Aa</span><strong>English</strong><small>Grammar, vocabulary & reading</small><span class="subject-link">Take a quiz →</span></button>
+ </div>
+ <div id="quizPanel" class="panel hidden"><div class="quiz-top"><div><p class="eyebrow" id="quizSubject">QUIZ</p><h3 id="questionTitle">Question</h3></div><span id="questionCount" class="pill"></span></div><div id="answers" class="answers"></div><p id="feedback" class="feedback" aria-live="polite"></p><div class="quiz-actions"><button id="nextBtn" class="primary" disabled>Next question →</button><button id="closeQuiz" class="ghost">Exit quiz</button></div></div>
+</section>
+<section id="tutor" class="section">
+ <div class="section-head"><div><p class="eyebrow">ASK, EXPLORE, UNDERSTAND</p><h2>Your learning tutor</h2></div><span class="pill">AI-ready</span></div>
+ <div class="tutor-layout"><div class="tutor-intro"><div class="tutor-spark">✦</div><h3>Curiosity is a superpower.</h3><p>Ask a question and get a clear, student-friendly explanation. Connect the backend and AI key to enable live AI responses.</p><div class="suggestions"><button class="suggestion">Explain photosynthesis simply</button><button class="suggestion">How do fractions work?</button><button class="suggestion">Help me improve my English</button></div></div>
+ <div class="chat panel"><div class="chat-head"><span class="online"></span><div><b>EduSmart Tutor</b><small id="tutorMode">Demo learning assistant</small></div><button id="clearChat" class="ghost small">Clear</button></div><div id="chatMessages" class="messages"><div class="bubble bot">Hi! 👋 I'm your learning tutor. Ask me a question, or choose a suggestion to get started.</div></div><form id="chatForm" class="chat-input"><input id="chatInput" maxlength="1000" placeholder="Ask a learning question..." autocomplete="off" required><button class="primary" type="submit" aria-label="Send">↑</button></form><p class="fineprint">Check important answers with your teacher or textbook.</p></div></div>
+</section>
+<section id="progress" class="section">
+ <div class="section-head"><div><p class="eyebrow">YOUR GROWTH</p><h2>Progress & learning report</h2></div><button id="exportBtn" class="secondary">Export CSV ↓</button></div>
+ <div class="progress-layout"><div class="panel chart-panel"><h3>Recent quiz scores</h3><div id="chart" class="chart"><p class="muted">Complete a quiz to see your progress here.</p></div></div><div class="panel report-panel"><h3>Personalised recommendations</h3><div id="recommendations"><p class="muted">Complete a quiz and we’ll suggest what to practise next.</p></div><hr><h3>Recent activity</h3><div id="recentActivity" class="activity"><p class="muted">Your completed quizzes will appear here.</p></div></div></div>
+</section>
+<footer><div class="brand footer-brand"><span class="logo">E</span><span>EduSmart <b>AI</b><small>LEARNING WITHOUT LIMITS</small></span></div><p>College project demo • Built for learning and exploration</p></footer>
+</main>
+<div id="profileModal" class="modal hidden"><div class="modal-card"><button id="closeProfile" class="modal-close">×</button><p class="eyebrow">YOUR PROFILE</p><h2>Student details</h2><label>Display name<input id="studentName" maxlength="50" placeholder="Enter your name"></label><label>Course / class<input id="studentCourse" maxlength="80" placeholder="e.g. B.Sc. Computer Science"></label><button id="saveProfile" class="primary full">Save profile</button><p class="muted small-text">In demo mode, profile data is stored on this device. With backend connected, it is saved to the database.</p></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
